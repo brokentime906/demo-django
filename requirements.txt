@@ -1,0 +1,10 @@
+django~=2.2.0
+
+django-heroku
+gunicorn
+psycopg2 #로컬에 있는 파일은 뭐냐 db엔진이 qllite로 그냥 설정 되어있는데
+           db엔진 바꾸는거다
+
+        db엔진 바뀌어도 모델 코드 바꿀일이 전혀 없기때문에 사용한다
+
+        PostgreSQL  이 db를 heroku가 defalut를 만들어줌

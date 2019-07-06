@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog',
+    'blog',  #활성화 용도 
 ]
 
 MIDDLEWARE = [
@@ -119,3 +119,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOt =os.path.join(BASE_DIR,'media')
+
+# 아래 코드는 heroku 상에서만 동작해야합니다.
+#몽키 패칭
+import sys
+
+if 'win' not in sys.platform and 'darwin ' != sys.platform: #윈도우도 아니고 맥도 아니면
+    import django_heroku
+    django_heroku.settings(locals())# 얘내들 추가하고
